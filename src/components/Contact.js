@@ -1,7 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Contact(props) {
-  return <div>This is a contact</div>;
+	return (
+		<div className="contact">
+			<span> {props.name} </span>
+		</div>
+	);
 }
+
+Contact.propTypes = {
+	name: PropTypes.string.isRequired
+};
 
 export default Contact;
