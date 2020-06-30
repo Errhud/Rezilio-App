@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import AddContact from "./AddContact";
 import GenderChart from "./GenderChart";
 
@@ -21,9 +20,9 @@ class Contact extends Component {
 		this.setState( lastState => ({
 			contactList: [...lastState.contactList, newContact]
 			}))
-		if (newContact.gender == "Male") {
+		if (newContact.gender === "Male") {
 			this.state.genderCount[0] +=1;
-		} else if (newContact.gender == "Female") {
+		} else if (newContact.gender === "Female") {
 			this.state.genderCount[1] +=1;
 		} else {
 			this.state.genderCount[2] +=1;
