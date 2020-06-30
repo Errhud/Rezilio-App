@@ -15,17 +15,17 @@ const AddContactForm = ({onInputChange, onFormSubmit}) =>
 			
 			<div className="form">
 				<label>Phone Number</label>
-				<input type="number" name="phone" onChange={onInputChange} placeholder="555-5555" />
+				<input type="tel" name="phone" onChange={onInputChange} placeholder="555-5555" />
 			</div>
 			
 			<div className="form">
 				<label>Gender</label>
-				<input type="radio" value="FEMALE" name="gender" onChange={onInputChange} /> Female
-				<input type="radio" value="MALE" name="gender" onChange={onInputChange} /> Male
-				<input type="radio" value="NONB" name="gender" onChange={onInputChange} /> Non-Binary
+				<input type="radio" value="Female" name="gender" onChange={onInputChange} /> Female
+				<input type="radio" value="Male" name="gender" onChange={onInputChange} /> Male
+				<input type="radio" value="Non-binary" name="gender" onChange={onInputChange} /> Non-Binary
 			</div>
 			
-			<button type="submit" onClick={onFormSubmit} class="btn"> Submit </button>
+			<button type="submit" onClick={onFormSubmit} className="btn"> Submit </button>
 		</form>
 	)
 
