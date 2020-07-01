@@ -6,6 +6,7 @@ export default class AddContact extends Component {
 	constructor(props){
 		super(props);
 		
+		
 		this.state ={
 			isHidden:true,
 			newContact: {
@@ -26,6 +27,7 @@ export default class AddContact extends Component {
 		this.setState({isHidden:false})
 	}
 	
+
 	handleInputChange(event) {
 		const target = event.target;
 		const value = target.value;
@@ -40,11 +42,12 @@ export default class AddContact extends Component {
 	)}
 	
 	handleSubmit(e) {
-		e.preventDefault();
+		e.preventDefault(); 				//this line prevents the page from refreshing
 		this.props.onSubmit(this.state.newContact);
 		this.setState({isHidden:true});
 	}
 	
+	//Renders the form only when isHidden is set to true
 	renderForm() {
 		return(
 			<div>
@@ -52,8 +55,10 @@ export default class AddContact extends Component {
 			</div>
 		)
 	}
+	
+	//if hidden=true, displays the addContact button
 	render() {
-		const { isFetching } = this.state;
+		const { isFetching } = this.state;   //a failed attempt to avoid double rendering
 		return(
 			<div>
 			{ isFetching ? (

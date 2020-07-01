@@ -3,6 +3,8 @@ import * as d3 from "d3";
 
 export default class GenderChart extends Component {
 	
+	
+	
 	constructor(props){
 		super(props);		
 		
@@ -16,12 +18,13 @@ export default class GenderChart extends Component {
 		
 	}
 	
-	
+	//refetch the data and show new chart
 	showChart(){
 		this.setState({isHidden:false})
 		this.setState({data:[{"Label":"Male", "value":this.props.genders[0]}, {"Label":"Female", "value":this.props.genders[1]}, {"Label":"Non-Binary", "value":this.props.genders[2]}]})
 		
 	}
+	
 	
 	hideChart(){
 		this.setState({isHidden:true})
@@ -45,7 +48,7 @@ export default class GenderChart extends Component {
 		  .append("g")
 			.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-		// Create dummy data
+
 		var data = [this.state.data[0].value, this.state.data[1].value, this.state.data[2].value];
 		var labels = [this.state.data[0].Label, this.state.data[1].Label, this.state.data[2].Label]
 
@@ -58,14 +61,11 @@ export default class GenderChart extends Component {
 		var pie = d3.pie()
 		  .value(function(d) {return d.value; })
 		var data_ready = pie(d3.entries(data))
-		// Now I know that group A goes from 0 degrees to x degrees and so on.
 
-		// shape helper to build arcs:
 		var arcGenerator = d3.arc()
 		  .innerRadius(0)
 		  .outerRadius(radius)
 
-		// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
 		svg
 		  .selectAll('mySlices')
 		  .data(data_ready)
@@ -77,7 +77,7 @@ export default class GenderChart extends Component {
 			.style("stroke-width", "2px")
 			.style("opacity", 0.7)
 
-		// Now add the annotation. Use the centroid method to get the best coordinates
+
 		svg
 		  .selectAll('mySlices')
 		  .data(data_ready)
@@ -97,9 +97,9 @@ export default class GenderChart extends Component {
 		
 	}
 	
-	
+	//if hidden=true, display only the gender chard button
 	render() {
-		const { isFetching } = this.state;
+		const { isFetching } = this.state; //a failed attempt to avoid double rendering
 		return (
 			<div>
 				{ isFetching ? (

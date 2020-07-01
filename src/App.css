@@ -92,7 +92,40 @@ form > div{
 	border:solid;
 	border-bottom-width:thin;
 }
-.radio > label {
+ul {
+	list-style-type:none;
+	color: grey;
+	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
 
-
+	display:block;
+}
+.contact{
+	height:100%;
+	vertical-align:middle;
+	padding:20px;
+	overflow:hidden;
+	text-align:center;
+}
+.contact-li {
+	border-style:solid;
+	border-width:thin;
+	min-height:60px;
+	vertical-align:middle;
+	height:100%;
+}
+.contact > span {
+	margin: 0 10px 0 0;
+}
+.fname {
+	float:left;
+}
+.lname {
+	float:left;
+}
+.gender {
+	float:right;
+}
+.phone {
+	float:center;
+	text-align:center;
 }

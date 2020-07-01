@@ -7,15 +7,16 @@ class Contact extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			contactList:[],
-			genderCount:[0, 0, 0]   // [Male, Female, Non-Binary]
+			contactList:[{"fname":"John", "lname":"Doe", "phone":"222-2222", "gender":"Male"},  	//Some dummy contacts    
+				{"fname":"Annette", "lname":"Dubois", "phone":"123-4567", "gender":"Female"},
+				{"fname":"Dominic", "lname":"Tremblay", "phone":"717-7171", "gender":"Non-Binary"}],
+			genderCount:[1, 1, 1]   // [Male, Female, Non-Binary], hard-coded to 1 only for demonstration
 		}
 		
-		this.handleNewContact = this.handleNewContact.bind(this);
-		
-		
+		this.handleNewContact = this.handleNewContact.bind(this);	
 	}
 	
+	//When the submit button is hit on adding a new contact, increments the gender count
 	handleNewContact(newContact) {
 		this.setState( lastState => ({
 			contactList: [...lastState.contactList, newContact]
@@ -29,8 +30,10 @@ class Contact extends Component {
 		}
 		
 	}
+	
+	//renders the contact list which is always visible.
 	render() {
-		const { isFetching } = this.state;
+		const { isFetching } = this.state; //a failed attempt to avoid double rendering
 		return(
 			<div>
 			{ isFetching ? (
@@ -42,10 +45,10 @@ class Contact extends Component {
 							(contact) =>
 								<li key={contact.phone} className="contact-li">
 									<div className="contact">
-										<span> {contact.fname} </span>
-										<span> {contact.lname} </span>
-										<span> {contact.phone} </span>
-										<span> {contact.gender}</span>
+										<span className="fname"> {contact.fname} </span>
+										<span className="lname"> {contact.lname} </span>
+										<span className="phone"> {contact.phone} </span>
+										<span className="gender"> {contact.gender}</span>
 									</div>
 								</li>
 						)}

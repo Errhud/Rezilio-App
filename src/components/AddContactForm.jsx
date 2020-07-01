@@ -1,5 +1,6 @@
 import React from 'react';
 
+//The add contact form
 const AddContactForm = ({onInputChange, onFormSubmit}) =>
 	(
 		<form>

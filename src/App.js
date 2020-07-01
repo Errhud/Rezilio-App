@@ -1,3 +1,6 @@
+//Author : Éric-Hudon-Bujold
+//Date: 07/01/2020
+
 import React, { Component } from "react";
 import "./App.css";
 
