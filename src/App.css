@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -15,13 +15,14 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 5vh;
+  max-height: 20vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: lightgrey;
+  padding: 10px;
 }
 
 .App-link {
@@ -35,4 +36,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ac-btn {
+	position:fixed;
+	height:60px;
+	width:100px;
+	bottom:0%;
+	background: #FE5F55;
+
+}
+
+.gc-btn {
+	position:fixed;
+	height:60px;
+	width:100px;
+	bottom:0%;
+	left:100px;
+	background: #139675;
+
+}
+.btn{
+	display: inline-block;
+	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	padding: .8em 1.4em;
+	padding-right: 4.7em;
+	border: none;
+	color: white;
+	transition: .2s;
+}
+
+body{
+	 background-color: #101010;
+}
+form > div{
+	padding:10px;
+	width: 400px;
+	margin: 50px auto;
+}
+.form{
+	padding:5px;
+	margin:5px;
+	border:solid;
+	border-width:thin;
+}
+.form > label, .form > span{
+	color: grey;
+	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+}
+.form > input {
+	float: right;
+    clear: both;
+	background-color: #282c34;
+	border:solid;
+	border-bottom-width:thin;
+}
+.radio > label {
+
+
 }

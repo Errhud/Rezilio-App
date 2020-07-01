@@ -30,24 +30,31 @@ class Contact extends Component {
 		
 	}
 	render() {
+		const { isFetching } = this.state;
 		return(
 			<div>
-				<ul className="contact-list">
-					{this.state.contactList.map(
-						(contact) =>
-							<li key={contact.phone} className="contact-li">
-								<div className="contact">
-									<span> {contact.fname} </span>
-									<span> {contact.lname} </span>
-									<span> {contact.phone} </span>
-									<span> {contact.gender}</span>
-								</div>
-							</li>
-					)}
-				</ul>
-				<br />
-				<AddContact onSubmit= {this.handleNewContact} />
-				<GenderChart genders={this.state.genderCount} />
+			{ isFetching ? (
+				<div>Loading...</div>
+			) : (
+				<div>
+					<ul className="contact-ul">
+						{this.state.contactList.map(
+							(contact) =>
+								<li key={contact.phone} className="contact-li">
+									<div className="contact">
+										<span> {contact.fname} </span>
+										<span> {contact.lname} </span>
+										<span> {contact.phone} </span>
+										<span> {contact.gender}</span>
+									</div>
+								</li>
+						)}
+					</ul>
+					<br />
+					<AddContact onSubmit= {this.handleNewContact} />
+					<GenderChart genders={this.state.genderCount} />
+				</div>
+			)}
 			</div>
 		);
 	}

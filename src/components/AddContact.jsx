@@ -53,9 +53,16 @@ export default class AddContact extends Component {
 		)
 	}
 	render() {
+		const { isFetching } = this.state;
 		return(
 			<div>
-				{this.state.isHidden === false ? this.renderForm(): <button onClick={this.showAddContactBox} className="btn"> Add Contact </button> }
+			{ isFetching ? (
+				<div>Loading...</div>
+			) : (
+				<div>
+					{this.state.isHidden === false ? this.renderForm(): <button onClick={this.showAddContactBox} className="btn ac-btn"> Add Contact </button> }
+				</div>
+			)}
 			</div>
 		)
 		
